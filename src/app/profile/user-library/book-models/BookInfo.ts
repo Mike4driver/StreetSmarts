@@ -4,7 +4,7 @@ export class BookInfo {
     authorName:string
     coverLinkLarge:string
     coverLinkSmall:string
-    coverlLinkMedium:string
+    coverLinkMedium:string
 }
 
 export class BookSearch {

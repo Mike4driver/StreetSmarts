@@ -33,7 +33,7 @@ export class UserService {
         await Axios.post(this.addressUrl, locationObject);
     }
 
-    async getUserAddress(locationObject) {
+    async getUserAddress() {
       const result = await Axios.get(this.locationUrl);
       return result.data;
     }

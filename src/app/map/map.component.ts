@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/profile/user-services/user.service';
 import {
   Component,
   OnInit,
@@ -29,12 +30,12 @@ export class MapComponent implements OnInit {
   //   return location ? location.lat : null
   // }
 
-  constructor() {}
+  constructor(private UserService: UserService) {}
 
-  ngOnInit() {
-    const locationData = JSON.parse(localStorage.getItem('locationData'))
-    this.lat = locationData.lat
-    this.lng = locationData.lng
+  async ngOnInit() {
+    const locationData = await this.UserService.getUserAddress()
+    this.lat = locationData.lat;
+    this.lng = locationData.lng;
     this.addMarker(this.lat, this.lng)
   }
 
