@@ -23,8 +23,8 @@ export class MapComponent implements OnInit {
   public lat;
   public lng;
   public selectedMarker;
-  public location: LatAndLng[]
-  public markers = []
+  public location: LatAndLng[];
+  public markers = [];
 
   // trackMarkers(index: number, location: any) {
   //   return location ? location.lat : null
@@ -34,10 +34,10 @@ export class MapComponent implements OnInit {
 
   async ngOnInit() {
     const locationData = await this.UserService.getUserAddress();
-    localStorage.setItem('locationData', JSON.stringify(locationData))
+    localStorage.setItem('locationData', JSON.stringify(locationData));
     this.lat = locationData.lat;
     this.lng = locationData.lng;
-    this.addMarker(this.lat, this.lng)
+    this.addMarker(this.lat, this.lng);
   }
 
   addMarker(lat: number, lng: number) {
@@ -60,17 +60,17 @@ export class MapComponent implements OnInit {
     this.selectedMarker = {
       lat: event.latitude,
       lng: event.longitude
-    }
-    console.log(this.markers)
-    this.markers = []
-    this.addMarker(userLocation[0].lat, userLocation[0].lng)
-    console.log(this.markers)
+    };
+    console.log(this.markers);
+    this.markers = [];
+    this.addMarker(userLocation[0].lat, userLocation[0].lng);
+    console.log(this.markers);
     // console.log(userLocation[0].lat)
     // console.log(userLocation[0].lng)
   }
 
   async populateMap() {
-    this.location = userLocation
+    this.location = userLocation;
   }
 
 }
