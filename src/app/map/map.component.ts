@@ -33,7 +33,8 @@ export class MapComponent implements OnInit {
   constructor(private UserService: UserService) {}
 
   async ngOnInit() {
-    const locationData = await this.UserService.getUserAddress()
+    const locationData = await this.UserService.getUserAddress();
+    localStorage.setItem('locationData', JSON.stringify(locationData))
     this.lat = locationData.lat;
     this.lng = locationData.lng;
     this.addMarker(this.lat, this.lng)
