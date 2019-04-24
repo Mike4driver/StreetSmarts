@@ -7,8 +7,7 @@
     <input type="submit" value="Submit" class="btn">
   </div>
 </form> -->
-
-<div class="container p-5 m-auto">
+<div class="container">
     <!--row-->
     <div class="row">
         <!--card-->
@@ -19,14 +18,16 @@
             <form (ngSubmit)="addBook()">
               <!--Start form row-->
               <div class="form-row">
-                <div class="form-group col-lg-6 col-md-6 m-4">
-                  <label class="form-group col-lg-2 col-md-1 m-2 text-white text-center" for="title"><b>Title</b></label>
+                <div class="form-group col-sm-6">
+                  <label class="form-group col-sm-12 text-white text-center" for="title"><b>Title</b></label>
                   <input class="form-control form-control-lg" name="title" [(ngModel)]="book.title" placeholder="Title">
                 </div>
-                <div class="form-group col-lg-6 col-md-6 m-4">
-                  <label class="form-group col-lg-2 col-md-1 m-2 text-white text-center" for="Author"><b>Author</b></label>
-                  <input class="form-control form-control-lg" name="author" [(ngModel)]="book.authorName" placeholder="Author">
+
+                <div class="form-group col-sm-6">
+                  <label class="form-group col-sm-12 text-white text-center" for="Author"><b>Author</b></label>
+                  <input class="form-control form-control-lg" name="authorName" [(ngModel)]="book.authorName" placeholder="Author">
+
                 </div>
-                <div class="form-group col-lg-6 col-md-6 m-4">
+                <div class="form-group col-sm-3">
                 <button type="submit" class="btn btn-primary mt-3"><h5>Search</h5></button>
                 </div>

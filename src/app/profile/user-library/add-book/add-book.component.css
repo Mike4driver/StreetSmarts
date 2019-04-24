@@ -1,8 +1,10 @@
+
 .container {
-    width: 100%;
-    
+    /* width: 100%; */
+    margin-left: 365px;
 }
 .card{
+
     background-color: #2e2e2ece;
     width: 100%;
 }
@@ -16,7 +18,7 @@
 }
 .form-group {
     color: darkgrey;
-    display: flex;
+
     width: 100%;
 }
 button{

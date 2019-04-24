@@ -9,7 +9,7 @@ import { userBooks } from './user-library/add-book/add-book.component';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  @Output() addBook: EventEmitter<any> = new EventEmitter();
+  @Output() newBook: EventEmitter<any> = new EventEmitter();
   userBooks: BookInfo[]
   title: string;
 

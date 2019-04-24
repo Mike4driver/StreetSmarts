@@ -5,7 +5,6 @@ import { MapComponent } from './map/map.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddBookComponent } from './profile/user-library/add-book/add-book.component';
 import { BookItemComponent } from './profile/user-library/book-item/book-item.component';
-import { BooksComponent } from './profile/user-library/show-books/books.component';
 //Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,7 +12,6 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FindBookComponent } from './map/find-book/find-book.component';
 import { HeaderComponent } from './header/header.component';
@@ -40,7 +38,6 @@ Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
     ProfileComponent,
     AddBookComponent,
     BookItemComponent,
-    BooksComponent,
     FindBookComponent,
     HeaderComponent,
     TestBookItemComponent,
@@ -51,7 +48,6 @@ Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: environment.GOOGLE_MAPS_API_KEY
     })
