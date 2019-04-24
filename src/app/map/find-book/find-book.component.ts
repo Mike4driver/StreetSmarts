@@ -6,16 +6,16 @@ import { BookService } from 'src/app/profile/user-library/book-services/books.se
 import { UserService } from 'src/app/profile/user-services/user.service';
 import { UserID } from 'src/app/profile/user-models/UserInfo';
 
-export let userLocation: LatAndLng[]
+export let userLocation: LatAndLng[];
 @Component({
   selector: 'app-find-book',
   templateUrl: './find-book.component.html',
   styleUrls: ['./find-book.component.scss']
 })
 export class FindBookComponent implements OnInit {
-  @Input() public parentData
-  @Output() public searchResults = new EventEmitter
-  @Output() public userLocation: LatAndLng[]
+  @Input() public parentData;
+  @Output() public searchResults = new EventEmitter;
+  @Output() public userLocation: LatAndLng[];
   book: BookSearch = {
     title: '',
     authorName: ''
@@ -49,31 +49,31 @@ export class FindBookComponent implements OnInit {
   }
 
   async getUsers() {
-    let userIDs = await this.getLocations();
-    let results = [];
-    console.log(userIDs)
+    const userIDs = await this.getLocations();
+    const results = [];
+    console.log(userIDs);
     userIDs.forEach(async user => {
-      const userLocation = await this.mapService.getUserLocation(user.ownedby);
+      const newLocation = await this.mapService.getUserLocation(user.ownedby);
       let isInResult = false;
       const locationObject = {
-        lat: userLocation.data.lat,
-        lng: userLocation.data.lng
-      }
+        lat: newLocation.data.lat,
+        lng: newLocation.data.lng
+      };
       if (results.length > 0) {
         results.forEach(result => {
-          console.log(result)
-          if (locationObject.lat == result.lat && locationObject.lng == result.lng) {
-            isInResult = true
+          console.log(result);
+          if (locationObject.lat === result.lat && locationObject.lng === result.lng) {
+            isInResult = true;
           }
-        })
+        });
       }
       if (!isInResult) {
-        console.log("!isInResult" , results)
+        console.log('!isInResult' , results);
         results.push({
-          lat: userLocation.data.lat,
-          lng: userLocation.data.lng,
+          lat: newLocation.data.lat,
+          lng: newLocation.data.lng,
           alpha: 1
-        })
+        });
       }
 
     });

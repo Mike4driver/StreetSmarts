@@ -63,7 +63,9 @@ export class MapComponent implements OnInit {
     };
     console.log(this.markers);
     this.markers = [];
-    this.addMarker(userLocation[0].lat, userLocation[0].lng);
+    for (let location of userLocation){
+      this.addMarker(location.lat, location.lng);
+    }
     console.log(this.markers);
     // console.log(userLocation[0].lat)
     // console.log(userLocation[0].lng)

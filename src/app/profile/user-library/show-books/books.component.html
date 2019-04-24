@@ -1,6 +1,6 @@
 <app-add-book></app-add-book>
-<app-book-item 
-*ngFor="let book of userBooks" 
+<app-book-item
+*ngFor="let book of books"
 [book]="book"
 (deleteBook)="deleteBook($event)"
 >
